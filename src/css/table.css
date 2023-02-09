@@ -1,0 +1,140 @@
+/* Original: https://codepen.io/rachelandrew/pen/PNwaZe */
+body {
+	font-family: Tahoma;
+}
+
+/* declare a 7 column grid on the table */
+#calendar {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #666666;
+    background-image: url('https://cdn.pixabay.com/photo/2013/03/19/23/07/easter-bunny-95096_960_720.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+#calendar tr, #calendar tbody {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+}
+
+caption {
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 135%;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#calendar a {
+    color: #402e8e;
+    text-decoration: none;
+}
+
+#calendar td, #calendar th {
+    padding: 5px;
+    box-sizing:border-box;
+    border: 1px solid #04d8a3;
+}
+
+#calendar .weekdays {
+    background: #5fe406; 
+    background-color: #666666;
+    background-image: url('https://c31b86a7-a-62cb3a1a-s-sites.googlegroups.com/site/onepiecefcth/home/One-Piece-Thousand-Sunny-and-Team-Wallpaper-HD.jpg?attachauth=ANoY7co1azE_TN9kFvsPukNSjSeO6483uxBB7wdr6PVPAiQ6_N_76EXLdhffixqy7iXTsazfc4L1IMC7CqzcWf1c0LxA6zs3R2jCaCYuceVUy4dkVRLxq6YN5dPBRxUbHp1kZin3-outLtaMiZuo1Luwdf_opdRXSj2F_hc4xInd3Oh9eSYmGkWS4HiOQULHE5vPbnwcpvZafBU1t_3xznQiZLparNZ2YMXyrFQcVn5p_zz3C0jtVtCdLQrJ6ud260kER6c5UrIHP3J-cjKL3G9NvanocMUPiQ%3D%3D&attredirects=0');
+    background-position: center;
+    background-size: cover;
+background-repeat: no-repeat; 
+}
+
+
+#calendar .weekdays th {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 50px;
+    border: none !important;
+    padding: 20px 8px;
+    color: #000000;
+    font-size: 25px;
+}
+
+#calendar td {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+#calendar .days li:hover {
+    background: #e28a8a;
+}
+
+#calendar .date {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 9px;
+    background: #d65454;
+    color: #020202;
+    width: 20px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    align-self: flex-end;
+}
+
+#calendar .event {
+    flex: 0 0 auto;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    line-height: 14px;
+    background: #8e352e;
+    border: 1px solid #8e352e;
+    color: rgb(1, 255, 225);
+    text-decoration: none;
+}
+
+#calendar .event-desc {
+    color: rgb(255, 255, 255);
+    margin: 3px 0 7px 0;
+    text-decoration: none;	
+}
+
+#calendar .other-month {
+    background: #f5f5f5;
+    color: #666;
+}
+
+/* ============================
+				Mobile Responsiveness
+   ============================*/
+
+
+@media(max-width: 768px) {
+    #calendar .weekdays, #calendar .other-month {
+        display: none;
+    }
+
+    #calendar li {
+        height: auto !important;
+        border: 1px solid #ededed;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: -1px;
+    }
+
+    #calendar, #calendar tr, #calendar tbody {
+        grid-template-columns: 1fr;
+    }
+
+    #calendar  tr {
+        grid-column: 1 / 2;
+    }
+
+    #calendar .date {
+        align-self: flex-start;
+    }
+}
